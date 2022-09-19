@@ -1,5 +1,5 @@
 .pop-up {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -13,10 +13,12 @@
 .pop-up__image {
   max-height: 800px;
   max-width: 800px;
+  object-fit: cover;
 }
 
 .pop-up__wrapper {
   display: flex;
+  max-height: 600px;
 }
 
 .pop-up__comments {
@@ -27,6 +29,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.pop-up__comments ul {
+  height: 80%;
+  overflow: scroll;
+  border: 1px solid rgb(88, 88, 88);
+  padding: 10px;
+}
+
 .pop-up__comment {
   font-size: 20px;
   padding-top: 10px;
@@ -34,4 +44,56 @@
 
 .pop-up__span {
   font-size: 15px;
+  display: inline-block;
+  margin: 20px 0 10px 0;
+}
+
+.pop-up__input {
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+@media screen and (max-width: 1112px) {
+  .pop-up__image {
+    max-height: 700px;
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pop-up__image {
+    max-height: 500px;
+    max-width: 500px;
+  }
+
+  .pop-up__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pop-up__comments {
+    min-height: 150px;
+  }
+
+  .pop-up__comments ul {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .pop-up__image {
+    max-height: 300px;
+    max-width: 300px;
+  }
+
+  .pop-up__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pop-up__comments {
+    min-height: 150px;
+  }
 }

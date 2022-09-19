@@ -22,6 +22,9 @@ const PopUp = ({ link, comments, setPopUpImage }: Props) => {
         <img src={link} alt="instrument" className="pop-up__image" />
         <div className="pop-up__comments">
           <ul>
+            <li>
+              <p>Комментарии:</p>
+            </li>
             {comments.map((comment) => {
               return (
                 <li key={comment.id}>
@@ -47,7 +50,7 @@ const PopUp = ({ link, comments, setPopUpImage }: Props) => {
               setInputValue("");
             }}
           >
-            <span className="pop-up__span" >Добавить комментарий</span>
+            <span className="pop-up__span">Добавить комментарий</span>
             <input
               className="pop-up__input"
               type="text"
