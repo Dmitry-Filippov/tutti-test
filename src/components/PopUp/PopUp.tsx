@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { addComment } from "../../api/api";
 import { Image } from "../App/App";
 import "./PopUp.css";
 
@@ -6,7 +7,7 @@ interface Props extends Image {
   setPopUpImage: Function;
 }
 
-const PopUp = ({ link, comments, setPopUpImage }: Props) => {
+const PopUp = ({ link, id, comments, setPopUpImage }: Props) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   return (
@@ -43,11 +44,17 @@ const PopUp = ({ link, comments, setPopUpImage }: Props) => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              comments.push({
-                text: inputValue,
-                id: Math.random(),
-              });
-              setInputValue("");
+              addComment(id, inputValue)
+                .then(() => {
+                  comments.push({
+                    text: inputValue,
+                    id: Math.random(),
+                  });
+                  setInputValue("");
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
             }}
           >
             <span className="pop-up__span">Добавить комментарий</span>

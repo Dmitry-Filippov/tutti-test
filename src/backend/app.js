@@ -10,6 +10,10 @@ app.get("/images", (req, res) => {
   res.send(data);
 });
 
+app.post("/images/:imageId", (req, res) => {
+  res.status(204).send();
+});
+
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
