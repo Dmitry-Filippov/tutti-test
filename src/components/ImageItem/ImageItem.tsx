@@ -1,12 +1,18 @@
+import { Image } from "../App/App";
 import "./ImageItem.css";
 
-interface props {
-  link: string;
+interface Props extends Image {
+  setPopUpImage: Function;
 }
 
-const ImageItem = ({ link }: props) => {
+const ImageItem = ({ link, id, comments, setPopUpImage }: Props) => {
   return (
-    <li className="image-item">
+    <li
+      className="image-item"
+      onClick={() => {
+        setPopUpImage({ link, id, comments });
+      }}
+    >
       <img src={link} alt="instrument" className="image-item__image" />
     </li>
   );

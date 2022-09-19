@@ -1,0 +1,37 @@
+.pop-up {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #353535a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pop-up__image {
+  max-height: 800px;
+  max-width: 800px;
+}
+
+.pop-up__wrapper {
+  display: flex;
+}
+
+.pop-up__comments {
+  background-color: #fff;
+  padding: 20px 20px 20px 50px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pop-up__comment {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.pop-up__span {
+  font-size: 15px;
+}
