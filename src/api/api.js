@@ -15,3 +15,14 @@ export const getImages = () => {
     return __getResponseData(res);
   });
 };
+
+export const addComment = (id, comment) => {
+  return fetch(`${BASE_URL}/images:${id}`, {
+    method: "POST",
+    body: {
+      comment,
+    },
+  }).then((res) => {
+    return __getResponseData(res);
+  });
+};
